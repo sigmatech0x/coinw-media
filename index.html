@@ -184,9 +184,9 @@ h2{font-size:clamp(36px,5.4vw,66px);margin:18px 0 22px;max-width:20ch;text-wrap:
 .legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
 .tip{position:fixed;z-index:70;pointer-events:none;background:#1d1d22;border:1px solid var(--line2);border-radius:10px;padding:9px 12px;font-size:13.5px;color:var(--mu2);max-width:300px;opacity:0;transition:opacity .15s;box-shadow:0 12px 30px rgba(0,0,0,.5)}
 .tip b{display:block;font-size:15px;color:var(--tx)}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}
 .pair .chart{margin-top:0;display:flex;flex-direction:column}
-.mult{display:flex;align-items:baseline;gap:14px;margin:4px 0 24px}
+.mult{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:4px 0 24px}
 .mult b{white-space:nowrap;font-size:clamp(56px,7vw,92px);font-weight:800;letter-spacing:-.05em;line-height:1}
 .mult span{color:var(--mu2);font-size:15px;max-width:22ch;line-height:1.35}
 .mini .bar{grid-template-columns:minmax(120px,170px) 1fr}
@@ -227,6 +227,10 @@ h2{font-size:clamp(36px,5.4vw,66px);margin:18px 0 22px;max-width:20ch;text-wrap:
 .ep ul{position:relative;list-style:none;display:flex;flex-direction:column;gap:8px;color:var(--mu2);font-size:15px;margin-top:auto;padding-top:22px;border-top:1px solid var(--line)}
 .ep li{display:flex;justify-content:space-between;gap:10px}
 .ep li span{color:var(--mu)}
+.plan{position:relative;list-style:none;counter-reset:p;display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:22px;border-top:1px solid var(--line);font-size:15px;color:var(--mu2)}
+.plan li{counter-increment:p;display:grid;grid-template-columns:22px 1fr;gap:6px;line-height:1.4}
+.plan li:before{content:counter(p);font-weight:700;color:var(--ac2);font-size:14px}
+.ep h4{margin-bottom:22px}
 .note{font-size:14.5px;color:var(--mu);margin-top:22px;max-width:70ch}
 
 /* смета */
@@ -323,7 +327,7 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
   .steps{grid-template-columns:repeat(2,1fr);row-gap:30px}
   .chain{grid-template-columns:1fr 1fr;row-gap:40px}
   .chain .ln{display:none}
-  .pair,.bms{grid-template-columns:1fr}
+  .pair,.bms{grid-template-columns:minmax(0,1fr)}
   .shelf-row{grid-auto-columns:calc((100vw - 2*var(--pad) - 2*16px) / 2.6)}
   .hero-side{display:none}
   .nav nav{display:none}
@@ -376,7 +380,8 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
   .er.usd{font-size:17px}
   .er.hd .m{display:inline}.er.hd .d{display:none}
   .rules{margin-top:60px}
-  .mult b{font-size:52px}
+  .mult b{font-size:44px}
+  .mult{flex-wrap:wrap}
 }
 @media (prefers-reduced-motion:reduce){
   .js .hl{background-size:100% 100%;transition:none}
@@ -392,8 +397,8 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
   <a class="logo" href="#top">CoinW <span>Media</span></a>
   <nav aria-label="Разделы">
     <a href="#why">Почему не крипто</a>
-    <a href="#refs">Как делают другие</a>
     <a href="#format">Формат</a>
+    <a href="#compare">Сравнения</a>
     <a href="#budget">Смета</a>
     <a href="#result">К чему ведёт</a>
   </nav>
@@ -420,7 +425,7 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
 
   <div class="hero-body"><div class="wrap">
     <p class="hero-pre"><b>CoinW Media</b> · бренд-медиа биржи</p>
-    <h1 data-split>Кино <span class="serif">о&nbsp;деньгах</span></h1>
+    <h1 data-split>Медиа <span class="serif">о&nbsp;деньгах</span></h1>
     <p class="meta"><span class="hide-m">Документальное шоу</span><span>3 выпуска</span><span>5–6 медийных гостей</span><span class="price-chip num">$8&nbsp;000 за 3 выпуска</span></p>
     <p class="desc">Не крипто-новости, а <span class="hl">своё медиа уровня Т‑Банка и Forbes</span>: острые темы про деньги и кризис, эксперты со своей аудиторией, картинка как в кино. CoinW — в титрах.</p>
     <div class="btns">
@@ -486,53 +491,6 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
   </div>
 </div></section>
 
-<!-- REFS -->
-<section class="sec" id="refs"><div class="wrap">
-  <p class="kick"><i></i>Как делают другие</p>
-  <h2 data-split>Бренды уже делают своё медиа — и его смотрят</h2>
-  <p class="lead">Отдельное шоу со своим лицом собирает в сотни раз больше, чем корпоративный канал. Бренд стоит в титрах, а в кадре история, сильный гость и острая тема.</p>
-
-  <div class="pair" style="margin-top:56px">
-    <div class="chart">
-      <h3>Шоу против канала компании</h3>
-      <p class="sub">Т‑Банк: шоу Private Talks и канал Т‑Инвестиций. Медиана просмотров последних 15 роликов.</p>
-      <div class="mult"><b class="num" data-count="136" data-pre="×">×136</b><span>во столько раз больше смотрят шоу бренда, чем канал компании</span></div>
-      <div class="bars mini"><div class="bar" data-tip="Private Talks|150 тыс."><div class="lab">Private Talks<small>отдельное шоу</small></div><div class="track"><div class="fill" style="width:100.00%;"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">150 тыс.</span></div></div><div class="bar bad" data-tip="Т‑Инвестиции|1,1 тыс."><div class="lab">Т‑Инвестиции<small>канал компании</small></div><div class="track"><div class="fill" style="width:0.73%;"></div><span class="val num" style="left:0.73%">1,1 тыс.</span></div></div></div>
-      <p class="src">YouTube, 13.10.2026.</p>
-    </div>
-    <div class="chart">
-      <h3>Фильм сам находит зрителя</h3>
-      <p class="sub">Positive Hack Media (пример жанра): подписчики канала и просмотры одного фильма.</p>
-      <div class="mult"><b class="num" data-count="19" data-pre="×">×19</b><span>фильм посмотрели больше людей, чем подписано на канал</span></div>
-      <div class="bars mini"><div class="bar" data-tip="Просмотры фильма|888 тыс."><div class="lab">Просмотры фильма</div><div class="track"><div class="fill" style="width:100.00%;"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">888 тыс.</span></div></div><div class="bar" data-tip="Подписчики канала|47,5 тыс."><div class="lab">Подписчики канала</div><div class="track"><div class="fill" style="width:5.35%;background:var(--mu3)"></div><span class="val num" style="left:5.35%">47,5 тыс.</span></div></div></div>
-      <p class="src">YouTube, 13.10.2026.</p>
-    </div>
-  </div>
-
-  <div class="bms"><article class="bm tg">
-  <a class="bm-shot" href="https://t.me/aviasales" target="_blank" rel="noopener noreferrer"><img src="assets/aviasales-tg.jpg" alt="Канал Авиасейлс в Telegram" loading="lazy" width="800" height="1520"></a>
-  <div class="bm-body">
-    <p class="who">Авиасейлс · Telegram</p>
-    <h3>Медиа бренда, которое читают ради него самого</h3>
-    <p>Юмор, мемы и жизнь путешественника. Билеты почти не продают, а канал работает как отдельное медиа.</p>
-    <div class="bm-stats"><div><b class="num">299 тыс.</b><span>подписчиков</span></div><div><b class="num">7–19 тыс.</b><span>просмотров у свежих постов</span></div></div>
-    <p class="src">Проверено на t.me/aviasales 13.10.2026.</p>
-  </div></article><article class="bm hd">
-  <div class="yt " role="button" tabindex="0" data-id="18UNEZr2odw" aria-label="Включить ролик: Что нельзя делать при выводе крипты"><img src="thumbs/hedliners.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">12:21</span></div>
-  <div class="bm-body">
-    <p class="who">Хедлайнеры · 333 тыс. подписчиков</p>
-    <h3>Монтаж и упаковку делает команда с миллионами просмотров</h3>
-    <p>Монтаж, цвет, моушен и упаковку выпусков берёт эта команда. В смете эти работы стоят 0 ₽.</p>
-    <div class="bm-stats"><div><b class="num">405 тыс.</b><span>просмотров у этого ролика</span></div></div>
-  </div></article></div>
-
-  <div class="rules">
-    <div><h4>Бренд — в титрах</h4><span>На обложках Private Talks нет логотипа банка: там только гость и тема.</span></div>
-    <div><h4>Гость приводит зрителя</h4><span>У медийного эксперта своя аудитория, и он сам выкладывает выпуск у себя.</span></div>
-    <div><h4>Тема — тревога зрителя</h4><span>Кризис, работа, деньги. Не продукт и не курс биткоина.</span></div>
-  </div>
-</div></section>
-
 <!-- FORMAT -->
 <section class="sec" id="format"><div class="wrap">
   <p class="kick"><i></i>Формат пилота</p>
@@ -543,11 +501,34 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
   <p class="quote serif">Сильная тема, сильный гость, журналистская работа и упаковка&nbsp;— из этого складывается выпуск, который смотрят.</p>
 
   <div class="eps">
-    <div class="ep"><div class="big" data-par="14">1</div><div class="n">Выпуск 1</div><h4>Рынок вот-вот рухнет — или это байка?</h4><ul><li>экономист</li><li>эксперт по рынкам<span>из-за рубежа</span></li></ul></div>
-    <div class="ep"><div class="big" data-par="14">2</div><div class="n">Выпуск 2</div><h4>Лёгкие деньги в интернете: почему большинство теряет — и что делают остальные?</h4><ul><li>психолог</li><li>блогер-практик</li></ul></div>
-    <div class="ep"><div class="big" data-par="14">3</div><div class="n">Выпуск 3</div><h4>Мы уже в кризисе — или всё ещё впереди?</h4><ul><li>экономист</li><li>предприниматель</li></ul></div>
+    <div class="ep"><div class="big" data-par="14">1</div><div class="n">Выпуск 1</div><h4>Рынок вот-вот рухнет — или это байка?</h4><ol class="plan"><li>Начинаем с заголовков «скоро обвал»: откуда страх и кто на нём зарабатывает</li><li>Конфликт: экономист видит пузырь, эксперт с рынков — панику ради кликов</li><li>Спорят на фактах: долги, ставки, прошлые кризисы</li><li>Итог: что из этого реально касается денег зрителя</li></ol></div>
+    <div class="ep"><div class="big" data-par="14">2</div><div class="n">Выпуск 2</div><h4>Лёгкие деньги в интернете: почему большинство теряет — и что делают остальные?</h4><ol class="plan"><li>Начинаем с истории человека, который быстро заработал и всё потерял</li><li>Конфликт: блогер-практик — «можно», психолог — «мозг ведётся на обещания»</li><li>Разбираем схемы: почему они работают на продавца</li><li>Итог: признаки ловушки и что делают те, кто не теряет</li></ol></div>
+    <div class="ep"><div class="big" data-par="14">3</div><div class="n">Выпуск 3</div><h4>Мы уже в кризисе — или всё ещё впереди?</h4><ol class="plan"><li>Начинаем с цен в магазине и аренды: кризис глазами зрителя</li><li>Конфликт: экономист и предприниматель видят разное</li><li>Спорят: что говорят цифры и что видно из бизнеса</li><li>Итог: как подготовиться, если спад впереди</li></ol></div>
   </div>
   <p class="note">Темы и гости — черновик, финальный список согласуем с CoinW до съёмок. Всего 5–6 гостей на три выпуска: из России и из-за рубежа, зарубежных переводим профессиональным дубляжом.</p>
+</div></section>
+
+<!-- COMPARE: одно против другого (правка Лео 13.10, п. 8) -->
+<section class="sec" id="compare"><div class="wrap">
+  <p class="kick"><i></i>Одно против другого</p>
+  <h2 data-split>За доверие к бренду биржи платят миллионы</h2>
+  <p class="lead">Соцдоказательство — то, ради чего биржи покупают спорт и эфиры. Своё медиа решает ту же задачу за другие деньги, и выпуски остаются у бренда.</p>
+  <div class="pair" style="margin-top:56px">
+    <div class="chart">
+      <h3>Сколько стоит соцдоказательство</h3>
+      <p class="sub">Сделки бирж ради имени и доверия. Шкала общая: пилот CoinW Media на ней почти не виден.</p>
+      <div class="mult"><b class="num">×812</b><span>столько пилотов стоят 30 секунд на Супербоуле</span></div>
+      <div class="bars "><div class="bar" data-tip="Bybit × Red Bull Racing|≈ $50 млн в год"><div class="lab">Bybit × Red Bull Racing<small>«Формула-1», ≈$150 млн за 3 года</small></div><div class="track"><div class="fill" style="width:100.00%;background:var(--mu3)"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:var(--tx)">≈ $50 млн в год</span></div></div><div class="bar" data-tip="Crypto.com Arena|≈ $35 млн в год"><div class="lab">Crypto.com Arena<small>название арены, ≈$700 млн за 20 лет</small></div><div class="track"><div class="fill" style="width:70.00%;background:var(--mu3)"></div><span class="val num" style="right:30.00%;left:auto;padding:0 12px 0 0;color:var(--tx)">≈ $35 млн в год</span></div></div><div class="bar" data-tip="30 секунд на Супербоуле|≈ $6,5 млн"><div class="lab">30 секунд на Супербоуле<small>реклама в эфире, 2022</small></div><div class="track"><div class="fill" style="width:13.00%;background:var(--mu3)"></div><span class="val num" style="left:13.00%">≈ $6,5 млн</span></div></div><div class="bar" data-tip="CoinW Media|$8 000"><div class="lab">CoinW Media<small>3 выпуска, остаются у бренда</small></div><div class="track"><div class="fill" style="width:0.40%;background:var(--ac)"></div><span class="val num" style="left:0.40%">$8 000</span></div></div></div>
+      <p class="src">Bybit × Red Bull: Autosport, Decrypt, 02.2022 (сумма от источников, официально не раскрыта). Crypto.com Arena: CNBC, The Block, 17.11.2021 (по данным источников). Супербоул LVI: средняя цена 30 с у NBC — CBS News, Fortune, 02.2022.</p>
+    </div>
+    <div class="chart">
+      <h3>Шоу банка против канала банка</h3>
+      <p class="sub">Т&#8209;Банк: шоу Private Talks и канал Т&#8209;Инвестиций. Медиана просмотров последних 15 роликов.</p>
+      <div class="mult"><b class="num" data-count="136" data-pre="×">×136</b><span>во столько раз больше смотрят шоу, чем канал компании</span></div>
+      <div class="bars mini"><div class="bar" data-tip="Private Talks|150 тыс."><div class="lab">Private Talks<small>отдельное шоу</small></div><div class="track"><div class="fill" style="width:100.00%;"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">150 тыс.</span></div></div><div class="bar bad" data-tip="Т‑Инвестиции|1,1 тыс."><div class="lab">Т‑Инвестиции<small>канал компании</small></div><div class="track"><div class="fill" style="width:0.73%;"></div><span class="val num" style="left:0.73%">1,1 тыс.</span></div></div></div>
+      <p class="src">YouTube, 13.10.2026: @private_talks и @T-Invest_official.</p>
+    </div>
+  </div>
 </div></section>
 
 <!-- BUDGET -->
@@ -577,7 +558,7 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
       <h3>Это уже минимум</h3>
       <p class="sub">Полная версия выпусков и наша смета, в рублях.</p>
       <div class="mult"><b class="num">−250 тыс. ₽</b><span>уже убрали из полной версии</span></div>
-      <div class="bars mini"><div class="bar" data-tip="Полная версия|870 000 ₽"><div class="lab">Полная версия<small>2 дня за рубежом и гонорары звёздам</small></div><div class="track"><div class="fill" style="width:100.00%;background:var(--mu3)"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">870 000 ₽</span></div></div><div class="bar" data-tip="Наша смета|620 000 ₽"><div class="lab">Наша смета<small>минимум без потери картинки</small></div><div class="track"><div class="fill" style="width:71.26%;"></div><span class="val num" style="right:28.74%;left:auto;padding:0 12px 0 0;color:#0b0b0e">620 000 ₽</span></div></div></div>
+      <div class="bars mini"><div class="bar" data-tip="Полная версия|870 000 ₽"><div class="lab">Полная версия<small>2 дня за рубежом и гонорары звёздам</small></div><div class="track"><div class="fill" style="width:100.00%;background:var(--mu3)"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:var(--tx)">870 000 ₽</span></div></div><div class="bar" data-tip="Наша смета|620 000 ₽"><div class="lab">Наша смета<small>минимум без потери картинки</small></div><div class="track"><div class="fill" style="width:71.26%;"></div><span class="val num" style="right:28.74%;left:auto;padding:0 12px 0 0;color:#0b0b0e">620 000 ₽</span></div></div></div>
       <ul class="diff"><li>Иностранные спикеры снимаются 2 дня, а не 1: +150 000 ₽</li><li>Гонорары 1–2 звёздным гостям из-за рубежа: +100 000 ₽</li></ul>
     </div>
     <div class="chart">
@@ -587,11 +568,14 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
       <p class="src">Считаем только просмотры самого выпуска на YouTube. Охват у гостей и 20 нарезок для Shorts и Reels — сверху. И выпуски набирают просмотры годами: «Лудомания» Глеба Соломина вышла в июне 2025 года, сейчас у неё 2,9 млн.</p>
     </div>
   </div>
+  <h3 class="h3s" style="margin-top:80px">Какие ещё были варианты</h3>
+  <p>Четыре сценария, которые мы считали до этой сметы. У каждого есть честный минус.</p>
   <div class="alts">
-    <div class="alt"><b>Репортаж попроще</b><span class="p">дешевле</span><span class="m"><em>Минус</em>кто-то из дома, кто-то по звонку. Картинка ниже уровня рынка, значит меньше просмотров.</span></div>
-    <div class="alt"><b>Один выпуск на пробу</b><span class="p">—</span><span class="m"><em>Минус</em>по одному выпуску не понять, заходит ли формат, и решение о сезоне принимать не по чему.</span></div>
-    <div class="alt"><b>Как новости крипты</b><span class="p">дёшево</span><span class="m"><em>Минус</em>и смотрят 6–10 тыс. человек.</span></div>
-  </div>
+    <div class="alt"><b>Все гости в Москве за один день</b><span class="p num">350–400 тыс. ₽</span><span class="m"><em>Минус</em>всех гостей нужно собрать в одном городе на одну 12-часовую смену — так не получалось ни разу. И гостей из-за рубежа мы теряем.</span></div>
+    <div class="alt"><b>Три выпуска попроще, репортажем</b><span class="p num">≈ 245–340 тыс. ₽</span><span class="m"><em>Минус</em>кто-то из дома, кто-то из студии, кто-то по звонку. Вытягиваем монтажом, но картинка ниже рынка — и просмотров меньше. Считали так: продакшн 30 тыс. за выпуск, съёмка 80–100 тыс., гости ~75 тыс. за съёмочный день.</span></div>
+    <div class="alt"><b>Один выпуск на пробу</b><span class="p num">≈ 200 тыс. ₽</span><span class="m"><em>Минус</em>по одному выпуску не понять, заходит ли формат, а гостей и студию потом собирать заново — решение о сезоне откладывается.</span></div>
+    <div class="alt"><b>Пауза</b><span class="p num">0 ₽</span><span class="m"><em>Минус</em>ничего не узнаём, а место бренд-медиа в нише занимают другие.</span></div>
+</div>
 </div></section>
 
 <!-- RESULT -->
