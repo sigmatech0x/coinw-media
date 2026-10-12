@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="yandex" content="none">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#07070a">
+<title>CoinW Media — три пилотных выпуска</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2307070a'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%23f2eee6'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/teaser/poster-hero.jpg" as="image" media="(min-width:761px)">
+<link rel="preload" href="assets/teaser/poster-hero-720.jpg" as="image" media="(max-width:760px)">
+<style>
+@font-face{font-family:Onest;font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/onest-cyrillic-wght-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Onest;font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/onest-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"PT Serif";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/pt-serif-cyrillic-400-italic.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"PT Serif";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/pt-serif-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+:root{
+  --bg:#07070a; --s1:#101013; --s2:#17171b; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.15);
+  --tx:#f2eee6; --mu:#8c887f; --mu2:#bdb8ae; --mu3:#4a4843;
+  --ac:#7650ff; --ac2:#a99bff; --bad:#ff5a4e; --good:#5ee39a;
+  --c1:#9085e9; --c2:#d95926; --c3:#199e70; --c4:#c98500;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --pad:24px; --edge:max(var(--pad), calc((100vw - 1200px) / 2 + var(--pad)));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:70px}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--tx);font:400 17px/1.55 Onest,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ac2);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.serif{font-family:"PT Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.kick{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:var(--mu2)}
+.kick i{width:28px;height:2px;background:var(--ac);display:inline-block;border-radius:2px}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.03em;line-height:1.02}
+h2{font-size:clamp(36px,5.4vw,66px);margin:18px 0 22px;max-width:20ch;text-wrap:balance}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--mu2);max-width:58ch}
+.sec{position:relative;padding:100px 0}
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* маркер-выделение */
+.hl{background:linear-gradient(transparent 58%,rgba(118,80,255,.66) 58%,rgba(118,80,255,.66) 92%,transparent 92%) no-repeat;background-size:100% 100%;padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.js .hl{background-size:0% 100%;transition:background-size 1.1s var(--ease) .1s}
+.js .hl.on{background-size:100% 100%}
+.hl.red{background-image:linear-gradient(transparent 58%,rgba(255,90,78,.5) 58%,rgba(255,90,78,.5) 92%,transparent 92%)}
+.hl.green{background-image:linear-gradient(transparent 58%,rgba(94,227,154,.36) 58%,rgba(94,227,154,.36) 92%,transparent 92%)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.wi{display:inline-block;will-change:transform}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,border-color .4s,opacity .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(7,7,10,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:30px;height:60px}
+.logo{font-weight:800;letter-spacing:-.02em;font-size:17px;white-space:nowrap;text-decoration:none}
+.logo span{color:var(--ac2)}
+.nav nav{display:flex;gap:26px;font-size:14.5px;color:var(--mu2);margin-left:auto}
+.nav nav a{text-decoration:none;white-space:nowrap;transition:color .2s}
+.nav nav a:hover{color:var(--tx)}
+.nav .price{font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;background:var(--tx);color:#0b0b0e;text-decoration:none;white-space:nowrap}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--ac);transform-origin:0 50%;transform:scaleX(0)}
+.watching-on .nav{opacity:0;pointer-events:none}
+
+/* HERO — по эталону: страница шоу Apple TV+ */
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;background:#000}
+.hero-media{position:absolute;inset:0;will-change:transform}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;background:#000;transition:opacity .6s}
+.hero .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;transition:opacity .6s;background:
+  linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.5) 32%,rgba(0,0,0,0) 62%),
+  linear-gradient(0deg,var(--bg) 0%,rgba(7,7,10,.72) 20%,rgba(7,7,10,0) 48%),
+  linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0) 16%)}
+.hero-body{position:absolute;left:0;right:0;bottom:172px;z-index:2;transition:opacity .5s,transform .6s var(--ease)}
+.hero-pre{font-size:15px;font-weight:600;color:var(--mu2);display:flex;align-items:center;gap:10px}
+.hero-pre b{color:var(--tx)}
+.hero h1{font-size:clamp(54px,7.4vw,108px);line-height:.94;letter-spacing:-.045em;margin:14px 0 18px;max-width:9ch}
+.hero h1 .serif{letter-spacing:-.03em;font-weight:400}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:15.5px;font-weight:600;color:var(--tx)}
+.meta span+span:before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--mu);margin:0 14px 3px 0;vertical-align:middle}
+.meta .price-chip{font-weight:800;color:#0b0b0e;background:var(--tx);padding:2px 9px;border-radius:6px}
+.meta .price-chip:before,.meta span+.price-chip:before{display:none}
+.hero .desc{max-width:47ch;margin-top:14px;font-size:17px;color:var(--mu2);line-height:1.5}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;transition:transform .3s var(--ease),background .25s,border-color .25s}
+.btn.w{background:var(--tx);color:#0b0b0e}
+.btn.w:hover{transform:translateY(-2px);background:#fff}
+.btn.g{border:1px solid var(--line2);color:var(--tx);background:rgba(20,20,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn.g:hover{border-color:rgba(255,255,255,.4)}
+.tri{width:0;height:0;border-left:11px solid currentColor;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.hero .fine{font-size:13.5px;color:var(--mu);margin-top:12px}
+.hero-side{position:absolute;right:var(--edge);bottom:180px;z-index:2;max-width:300px;font-size:14px;color:var(--mu);line-height:1.5;transition:opacity .5s}
+.hero-side b{color:var(--mu2);font-weight:500}
+.mute{position:absolute;z-index:3;top:78px;right:var(--edge);width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);display:grid;place-items:center;background:rgba(0,0,0,.25);transition:background .25s,border-color .25s,opacity .4s}
+.mute:hover{background:rgba(0,0,0,.5);border-color:#fff}
+.mute svg{width:20px;height:20px}
+.mute .on{display:none}.mute.unmuted .on{display:block}.mute.unmuted .off{display:none}
+.close-watch{position:absolute;z-index:4;top:22px;right:var(--edge);display:none;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:rgba(20,20,24,.7);border:1px solid var(--line2);font-size:14px;font-weight:600;backdrop-filter:blur(10px)}
+.hero.watching .hero-body,.hero.watching .hero-side,.hero.watching .scrim,.hero.watching .mute{opacity:0;pointer-events:none}
+.hero.watching .hero-body{transform:translateY(20px)}
+.hero.watching video{object-fit:contain}
+.hero.watching .close-watch{display:inline-flex}
+
+/* полка обложек — как ряд эпизодов Apple TV */
+.shelf{position:relative;z-index:3;margin-top:-142px;padding-bottom:40px}
+.shelf-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:14px}
+.shelf-head h2{font-size:22px;letter-spacing:-.02em;margin:0;max-width:none}
+.shelf-head p{font-size:14px;color:var(--mu);margin-top:4px}
+.arrows{display:flex;gap:8px}
+.arrows button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;background:rgba(20,20,24,.6);transition:border-color .2s,opacity .2s}
+.arrows button:hover{border-color:rgba(255,255,255,.45)}
+.arrows button:disabled{opacity:.3;cursor:default}
+.arrows svg{width:16px;height:16px}
+.shelf-row{display:grid;grid-auto-flow:column;grid-auto-columns:calc((min(100vw,1200px) - 2*var(--pad) - 3*18px) / 4.25);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--edge);padding:6px var(--edge) 10px;scrollbar-width:none}
+.shelf-row::-webkit-scrollbar{display:none}
+.ep-card{scroll-snap-align:start;min-width:0}
+.ep-card .yt{border-radius:12px}
+.ep-meta{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13px;color:var(--mu)}
+.ep-meta .who{font-weight:600;color:var(--mu2)}
+.genre{font-size:11.5px;font-weight:600;color:var(--mu2);border:1px solid var(--line2);border-radius:5px;padding:1px 6px}
+.ep-card h4{font-size:15.5px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin-top:5px}
+.ep-views{font-size:13.5px;color:var(--mu);margin-top:5px}
+.ep-views b{color:var(--tx);font-weight:700}
+
+/* YouTube-фасад: обложка, плеер грузится по клику */
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;overflow:hidden;color:#fff;border-radius:14px;isolation:isolate}
+.yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease),filter .4s}
+.yt:hover img{transform:scale(1.035);filter:brightness(1.06)}
+.yt .play{position:absolute;left:14px;bottom:14px;width:46px;height:46px;border-radius:50%;background:rgba(10,10,12,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;transition:background .25s,transform .35s var(--ease);z-index:2}
+.yt:hover .play{background:var(--ac);border-color:var(--ac);transform:scale(1.06)}
+.yt .play:after{content:"";border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.yt .dur{position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:700;padding:3px 7px;border-radius:6px;background:rgba(0,0,0,.78);z-index:2}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+.yt.big .play{left:50%;top:50%;bottom:auto;width:76px;height:76px;margin:-38px 0 0 -38px}
+.yt.big .play:after{border-left-width:20px;border-top-width:12px;border-bottom-width:12px;margin-left:6px}
+
+/* факты */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:60px}
+.fact{padding:36px 26px 32px 0}
+.fact+.fact{padding-left:26px;border-left:1px solid var(--line)}
+.fact b{display:block;font-size:clamp(40px,4.8vw,66px);font-weight:800;letter-spacing:-.045em;line-height:1}
+.fact span{display:block;margin-top:12px;font-size:15px;color:var(--mu2);max-width:22ch}
+.fact.g b{color:var(--good)}
+
+/* так надо / так не надо */
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.side{border-radius:24px;border:1px solid var(--line);background:var(--s1);overflow:hidden;display:flex;flex-direction:column}
+.side .yt{border-radius:0;aspect-ratio:16/10}
+.side .yt img{object-position:top}
+.side .yt .play{left:auto;right:16px;bottom:16px}
+.side .hint{position:absolute;left:16px;bottom:22px;z-index:2;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;background:rgba(10,10,12,.72);backdrop-filter:blur(6px)}
+.side .body{padding:28px 30px 32px;display:flex;flex-direction:column;flex:1}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700}
+.tag:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.tag.bad{color:var(--bad)} .tag.good{color:var(--good)}
+.side h3{font-size:28px;margin:12px 0 10px}
+.side p{color:var(--mu2)}
+.side .big{font-size:clamp(46px,5vw,66px);font-weight:800;letter-spacing:-.045em;margin-top:auto;padding-top:24px;line-height:1}
+.side .big small{display:block;font-size:14px;color:var(--mu);font-weight:500;letter-spacing:0;margin-top:8px}
+
+/* графики */
+.chart{margin-top:64px;border:1px solid var(--line);border-radius:24px;background:var(--s1);padding:34px 34px 30px}
+.chart h3{font-size:clamp(22px,2.6vw,30px)}
+.chart .sub{color:var(--mu);font-size:15px;margin:8px 0 28px;max-width:62ch}
+.bars{display:flex;flex-direction:column;gap:12px}
+.bar{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:18px;align-items:center;cursor:default}
+.bar .lab{font-size:15px;color:var(--mu2);line-height:1.25}
+.bar .lab small{display:block;color:var(--mu);font-size:12.5px;margin-top:2px}
+.bar .track{position:relative;height:30px}
+.bar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:0 5px 5px 0;background:var(--c1);min-width:3px;transform-origin:0 50%}
+.bar.bad .fill{background:var(--c2)}
+.bar .val{position:absolute;top:50%;transform:translateY(-50%);font-weight:700;font-size:15px;white-space:nowrap;padding-left:10px;color:var(--tx)}
+.bar:hover .lab{color:var(--tx)}
+.bar:hover .fill{filter:brightness(1.15)}
+.axis{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:18px;margin-top:10px;font-size:12px;color:var(--mu)}
+.axis div:last-child{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:6px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:13.5px;color:var(--mu2)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.tip{position:fixed;z-index:70;pointer-events:none;background:#1d1d22;border:1px solid var(--line2);border-radius:10px;padding:9px 12px;font-size:13.5px;color:var(--mu2);max-width:300px;opacity:0;transition:opacity .15s;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.tip b{display:block;font-size:15px;color:var(--tx)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.pair .chart{margin-top:0;display:flex;flex-direction:column}
+.mult{display:flex;align-items:baseline;gap:14px;margin:4px 0 24px}
+.mult b{white-space:nowrap;font-size:clamp(56px,7vw,92px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.mult span{color:var(--mu2);font-size:15px;max-width:22ch;line-height:1.35}
+.mini .bar{grid-template-columns:minmax(120px,170px) 1fr}
+.src{font-size:12.5px;color:var(--mu);margin-top:auto;padding-top:18px}
+
+/* бренд-медиа */
+.bms{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.bm{border:1px solid var(--line);border-radius:24px;background:var(--s1);overflow:hidden;display:flex;flex-direction:column}
+.bm.tg{display:grid;grid-template-columns:.8fr 1fr}
+.bm-shot{display:block;overflow:hidden;background:#87a96b;border-right:1px solid var(--line);max-height:520px}
+.bm-shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--ease)}
+.bm-shot:hover img{transform:scale(1.03)}
+.bm .yt{border-radius:0}
+.bm-body{padding:28px 30px 30px;display:flex;flex-direction:column;gap:10px}
+.bm .who{font-size:14px;font-weight:600;color:var(--ac2)}
+.bm h3{font-size:clamp(22px,2.3vw,28px);line-height:1.1}
+.bm p{color:var(--mu2);font-size:15.5px}
+.bm-stats{display:flex;gap:30px;margin-top:auto;padding-top:14px}
+.bm-stats b{display:block;font-size:clamp(30px,3.4vw,42px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.bm-stats span{font-size:13.5px;color:var(--mu)}
+.bm .src{margin-top:0;padding-top:4px}
+.rules{margin-top:90px;display:grid;grid-template-columns:repeat(3,1fr);gap:0 30px;border-top:1px solid var(--line)}
+.rules div{padding-top:28px}
+.rules h4{font-size:22px;margin-bottom:8px}
+.rules span{font-size:15.5px;color:var(--mu2)}
+
+/* формат */
+.formula{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 0;align-items:center}
+.formula span{padding:12px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--s1);font-weight:600;font-size:15px}
+.formula i{display:none}
+.quote{margin:56px 0 0;font-size:clamp(24px,3.2vw,40px);line-height:1.28;max-width:30ch}
+.quote small{display:block;font-family:Onest,sans-serif;font-style:normal;font-size:14px;color:var(--mu);margin-top:16px;letter-spacing:0}
+.eps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:70px}
+.ep{position:relative;overflow:hidden;border-radius:24px;border:1px solid var(--line);background:var(--s1);padding:30px 28px 28px;min-height:320px;display:flex;flex-direction:column}
+.ep .big{position:absolute;right:-6px;top:-44px;font-size:240px;font-weight:800;letter-spacing:-.08em;color:rgba(255,255,255,.04);line-height:1;will-change:transform}
+.ep .n{position:relative;font-size:14px;font-weight:700;color:var(--ac2)}
+.ep h4{position:relative;font-size:clamp(25px,2.4vw,31px);letter-spacing:-.03em;line-height:1.08;margin-top:14px}
+.ep ul{position:relative;list-style:none;display:flex;flex-direction:column;gap:8px;color:var(--mu2);font-size:15px;margin-top:auto;padding-top:22px;border-top:1px solid var(--line)}
+.ep li{display:flex;justify-content:space-between;gap:10px}
+.ep li span{color:var(--mu)}
+.note{font-size:14.5px;color:var(--mu);margin-top:22px;max-width:70ch}
+
+/* смета */
+.total{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-top:50px}
+.total b{font-size:clamp(84px,14vw,190px);font-weight:800;letter-spacing:-.06em;line-height:.85}
+.total span{color:var(--mu2);font-size:16px;max-width:32ch;text-align:right}
+.stack{display:flex;gap:2px;height:64px;margin-top:40px;border-radius:12px;overflow:hidden}
+.seg{position:relative;height:100%;transform-origin:0 50%;cursor:default}
+.seg:hover{filter:brightness(1.15)}
+.seglab{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:18px;font-size:14px;color:var(--mu2)}
+.seglab span{display:inline-flex;align-items:center;gap:8px}
+.seglab i,.li i{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
+i.zero{border:1.5px dashed var(--good);background:transparent}
+i.dash{border:1.5px dashed var(--mu)}
+.ledger{margin-top:56px;border-top:1px solid var(--line2)}
+.li{display:grid;grid-template-columns:22px 1fr 130px 110px;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.li i{transform:translateY(1px)}
+.li b{font-size:18px;font-weight:700}
+.li small{display:block;color:var(--mu);font-size:14.5px;margin-top:4px;line-height:1.45;max-width:60ch}
+.li .r{text-align:right;font-weight:700;font-size:18px;white-space:nowrap}
+.li .r.mu{color:var(--mu2);font-weight:500}
+.li .good,.li.free .r:not(.mu){color:var(--good)}
+.li.head{padding:14px 0;font-size:13px;color:var(--mu);font-weight:600}
+.li.head .r{font-size:13px;font-weight:600;color:var(--mu)}
+.li.grp{padding:30px 0 10px;border-bottom:1px solid var(--line2);font-size:13.5px;font-weight:700;color:var(--mu2)}
+.li.grp .r{font-size:14px}
+.zl{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.zl li{font-size:13.5px;color:var(--mu2);border:1px dashed rgba(94,227,154,.45);border-radius:999px;padding:5px 12px}
+.li.sub{background:rgba(255,255,255,.02)}
+.li.sub b,.li.sub .r{font-size:19px}
+.li.sum{border-bottom:0;border-top:1px solid var(--line2)}
+.li.sum b,.li.sum .r{font-size:24px;font-weight:800}
+.li.opt{opacity:.75;border-bottom:0}
+.h3s{font-size:clamp(26px,3vw,36px);margin:100px 0 10px}
+.h3s+p{color:var(--mu2);max-width:60ch}
+.eptable{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--s1)}
+.er{display:grid;grid-template-columns:1.6fr repeat(3,1fr) 1fr;gap:12px;padding:16px 24px;border-top:1px solid var(--line);font-size:15.5px;align-items:baseline}
+.er span:not(:first-child){text-align:right}
+.er.hd b{font-weight:600}.er.hd .m{display:none}
+.er .good{color:var(--good)}
+.er.hd{border-top:0;font-size:13px;color:var(--mu);font-weight:600}
+.er.tot{font-weight:800;font-size:17px;background:rgba(255,255,255,.025)}
+.er.usd{font-size:20px}
+.er span:last-child{color:var(--mu2)}
+.er.tot span:last-child{color:var(--tx)}
+.alts{margin-top:30px}
+.alt{display:grid;grid-template-columns:1.1fr .8fr 1.7fr;gap:28px;padding:24px 0;border-top:1px solid var(--line);align-items:baseline}
+.alt b{font-size:18px}
+.alt .p{font-weight:700;color:var(--mu2)}
+.alt .m{color:var(--mu2);font-size:15.5px}
+.alt .m em{font-style:normal;color:var(--bad);font-weight:700;margin-right:6px}
+.diff{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--mu2)}
+.diff li{padding-left:18px;position:relative}
+.diff li:before{content:"−";position:absolute;left:0;color:var(--good);font-weight:800}
+
+/* к чему ведёт */
+.chain{display:grid;grid-template-columns:repeat(4,1fr);margin-top:60px;position:relative}
+.chain .ln{position:absolute;left:28px;right:28px;top:27px;height:2px;background:var(--line)}
+.chain .ln i{display:block;height:100%;width:100%;background:var(--ac);transform-origin:0 50%;transform:scaleX(0)}
+.chain .c{position:relative;padding-right:26px}
+.chain .dot{width:56px;height:56px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);display:grid;place-items:center;font-weight:800;font-size:15px;color:var(--ac2);margin-bottom:22px;position:relative;z-index:1}
+.chain b{display:block;font-size:24px;margin-bottom:8px;letter-spacing:-.02em}
+.chain span{font-size:15.5px;color:var(--mu2)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:100px;counter-reset:s}
+.step{border-top:2px solid var(--line2);padding-top:18px;counter-increment:s}
+.step:before{content:counter(s);font-size:14px;font-weight:700;color:var(--ac2)}
+.step b{display:block;font-size:18px;margin:8px 0 6px}
+.step span{font-size:14.5px;color:var(--mu2)}
+.measure{margin-top:80px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start;border-top:1px solid var(--line);padding-top:40px}
+.measure h3{font-size:clamp(24px,2.6vw,32px)}
+.measure ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;color:var(--mu2)}
+.measure li{padding-left:20px;position:relative}
+.measure li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--ac)}
+
+/* честно */
+.honest{background:var(--s1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.honest h2{max-width:14ch}
+.hon{display:grid;grid-template-columns:repeat(2,1fr);gap:0 60px;margin-top:50px}
+.hon div{padding:26px 0;border-top:1px solid var(--line2)}
+.hon b{display:block;font-size:clamp(21px,2.2vw,26px);letter-spacing:-.02em;line-height:1.2;margin-bottom:8px}
+.hon span{color:var(--mu2);font-size:15.5px}
+.aside{margin-top:36px;padding:18px 22px;border-left:2px solid var(--ac);background:rgba(118,80,255,.06);border-radius:0 12px 12px 0;color:var(--mu2);font-size:15.5px;max-width:70ch}
+
+.cta{padding:170px 0 150px;text-align:center;overflow:hidden}
+.cta h2{margin:22px auto 22px;max-width:15ch;font-size:clamp(44px,7.4vw,104px)}
+.cta .lead{margin:0 auto}
+.cta .btns{justify-content:center;margin-top:40px}
+footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid var(--line)}
+
+@media (max-width:980px){
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:30px}
+  .chain{grid-template-columns:1fr 1fr;row-gap:40px}
+  .chain .ln{display:none}
+  .pair,.bms{grid-template-columns:1fr}
+  .shelf-row{grid-auto-columns:calc((100vw - 2*var(--pad) - 2*16px) / 2.6)}
+  .hero-side{display:none}
+  .nav nav{display:none}
+  .nav .price{margin-left:auto}
+  .measure{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  :root{--pad:18px}
+  body{font-size:16px}
+  .sec{padding:84px 0}
+  .nav nav{display:none}
+  .nav .price{margin-left:auto}
+  .hero{height:auto;min-height:0;padding-bottom:28px;background:var(--bg)}
+  .hero-media{position:relative;height:64svh;min-height:420px;max-height:620px}
+  .hero video{object-position:30% 40%}
+  .hero .scrim{bottom:auto;height:64svh;min-height:420px;max-height:620px;background:linear-gradient(0deg,var(--bg) 0%,rgba(7,7,10,.7) 22%,rgba(7,7,10,0) 50%),linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0) 22%)}
+  .hero-body{position:relative;bottom:auto;margin-top:-150px}
+  .hero.watching .hero-body{opacity:1;pointer-events:auto;transform:none}
+  .hero .hide-m{display:none}
+  .meta .hide-m+span:before{display:none}
+  .hero h1{font-size:clamp(46px,13.5vw,60px)}
+  .meta{font-size:14px;gap:4px 10px}
+  .meta span+span:before{margin-right:10px}
+  .hero .desc{font-size:15.5px}
+  .btns .btn{flex:1 1 100%;justify-content:center}
+  .mute{top:70px}
+  .shelf{margin-top:24px}
+  .shelf-head .arrows{display:none}
+  .shelf-row{grid-auto-columns:76%;gap:14px}
+  .duel,.eps,.rules,.hon{grid-template-columns:1fr}
+  .bm.tg{grid-template-columns:1fr}
+  .bm-shot{max-height:380px;border-right:0;border-bottom:1px solid var(--line)}
+  .alt{grid-template-columns:1fr;gap:6px}
+  .chart{padding:24px 18px 22px}
+  .bar,.axis{grid-template-columns:104px 1fr;gap:12px}
+  .mini .bar{grid-template-columns:104px 1fr}
+  .bar .lab{font-size:13.5px}
+  .bar .val{font-size:13.5px}
+  .li{grid-template-columns:14px 1fr 92px;gap:12px}
+  .li .r.mu{display:none}
+  .li .r[data-rub]:after{content:attr(data-rub);display:block;font-size:12.5px;font-weight:500;color:var(--mu)}
+  .formula i{display:none}
+  .li b{font-size:16.5px}
+  .total span{text-align:left}
+  .ep{min-height:0}
+  .chain{grid-template-columns:1fr}
+  .measure ul{grid-template-columns:1fr}
+  .er{grid-template-columns:1.5fr 1fr 1fr;padding:13px 16px;font-size:14.5px}
+  .er span:nth-child(3),.er span:nth-child(4){display:none}
+  .er.usd{font-size:17px}
+  .er.hd .m{display:inline}.er.hd .d{display:none}
+  .rules{margin-top:60px}
+  .mult b{font-size:52px}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .hl{background-size:100% 100%;transition:none}
+  .yt img,.bm-shot img{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<header class="nav" id="nav"><div class="wrap">
+  <a class="logo" href="#top">CoinW <span>Media</span></a>
+  <nav aria-label="Разделы">
+    <a href="#why">Почему не крипто</a>
+    <a href="#refs">Как делают другие</a>
+    <a href="#format">Формат</a>
+    <a href="#budget">Смета</a>
+    <a href="#result">К чему ведёт</a>
+  </nav>
+  <a class="price" href="#budget">$8&nbsp;000 · 3 выпуска</a>
+  <div class="prog" id="prog"></div>
+</div></header>
+
+<main>
+<!-- HERO: тизер во весь экран, как на странице шоу Apple TV+ -->
+<section class="hero" id="top" aria-label="Тизер">
+  <div class="hero-media" id="heroMedia">
+    <video id="tz" muted playsinline loop preload="metadata" disablepictureinpicture
+      poster="assets/teaser/poster-hero.jpg"
+      data-hd="assets/teaser/teaser2-1080.mp4" data-sd="assets/teaser/teaser2-720.mp4"
+      data-poster-sd="assets/teaser/poster-hero-720.jpg"
+      aria-label="Тизер нашего выпуска с гостями, 42 секунды"></video>
+  </div>
+  <div class="scrim"></div>
+  <button class="mute" id="mute" aria-label="Включить звук" aria-pressed="false">
+    <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
+    <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+  </button>
+  <button class="close-watch" id="closeWatch">Свернуть тизер</button>
+
+  <div class="hero-body"><div class="wrap">
+    <p class="hero-pre"><b>CoinW Media</b> · бренд-медиа биржи</p>
+    <h1 data-split>Кино <span class="serif">о&nbsp;деньгах</span></h1>
+    <p class="meta"><span class="hide-m">Документальное шоу</span><span>3 выпуска</span><span>5–6 медийных гостей</span><span class="price-chip num">$8&nbsp;000 за 3 выпуска</span></p>
+    <p class="desc">Не крипто-новости, а <span class="hl">своё медиа уровня Т‑Банка и Forbes</span>: острые темы про деньги и кризис, эксперты со своей аудиторией, картинка как в кино. CoinW — в титрах.</p>
+    <div class="btns">
+      <button class="btn w" id="playSound"><span class="tri"></span>Смотреть тизер со звуком</button>
+      <a class="btn g" href="#budget">Смета по строкам</a>
+    </div>
+    <p class="fine">Тизер нашего выпуска с гостями · 42 секунды</p>
+  </div></div>
+  <p class="hero-side">Формат как у <b>Т—Ж</b>, <b>Private Talks</b>, <b>Forbes Talk</b> и&nbsp;<b>Глеба Соломина</b></p>
+</section>
+
+<!-- полка обложек -->
+<section class="shelf" aria-labelledby="shelfH">
+  <div class="wrap shelf-head">
+    <div><h2 id="shelfH">Так уже снимают бренды и медиа</h2><p>Нажмите на обложку — ролик включится прямо здесь</p></div>
+    <div class="arrows"><button id="shL" aria-label="Назад" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 6-6 6 6 6"/></svg></button><button id="shR" aria-label="Вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button></div>
+  </div>
+  <div class="shelf-row" id="shelf"><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="xof8p4GyQjw" aria-label="Включить ролик: Лудомания — чума XXI века"><img src="thumbs/solomin_1.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">1:28:57</span></div><div class="ep-meta"><span class="who">Глеб Соломин</span></div><h4>Лудомания — чума XXI века</h4><p class="ep-views"><b class="num">2,9 млн</b> просмотров</p></article><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="mPtfW2CEKvk" aria-label="Включить ролик: «Кризис коснётся каждого?»"><img src="thumbs/solomin_2.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">1:26:39</span></div><div class="ep-meta"><span class="who">Глеб Соломин</span></div><h4>«Кризис коснётся каждого?»</h4><p class="ep-views"><b class="num">2,3 млн</b> просмотров</p></article><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="pZ62VNcxKzg" aria-label="Включить ролик: «Мы на дне уже?» Что ждёт Россию"><img src="thumbs/private_talks.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">56:06</span></div><div class="ep-meta"><span class="who">Т‑Банк</span></div><h4>«Мы на дне уже?» Что ждёт Россию</h4><p class="ep-views"><b class="num">828 тыс.</b> просмотров</p></article><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="HA4-EXB8lTQ" aria-label="Включить ролик: Скорее всего, вы не разбогатеете"><img src="thumbs/tj.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">24:55</span></div><div class="ep-meta"><span class="who">Т‑Банк</span></div><h4>Скорее всего, вы не разбогатеете</h4><p class="ep-views"><b class="num">784 тыс.</b> просмотров</p></article><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="Zp4xZe_F-No" aria-label="Включить ролик: Олег Вьюгин о том, что ждёт экономику"><img src="thumbs/neforbes.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">54:16</span></div><div class="ep-meta"><span class="who">Forbes</span></div><h4>Олег Вьюгин о том, что ждёт экономику</h4><p class="ep-views"><b class="num">547 тыс.</b> просмотров</p></article><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="sTmzT0EvRPM" aria-label="Включить ролик: От каких машин держаться подальше"><img src="thumbs/dengi_ne_spyat.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">1:37:15</span></div><div class="ep-meta"><span class="who">Т‑Банк</span></div><h4>От каких машин держаться подальше</h4><p class="ep-views"><b class="num">475 тыс.</b> просмотров</p></article><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="vveLaA-z3-o" aria-label="Включить ролик: hacker:HUNTER — история WannaCry"><img src="thumbs/kaspersky_doc.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">25:10</span></div><div class="ep-meta"><span class="who">Tomorrow Unlocked</span><span class="genre">пример жанра</span></div><h4>hacker:HUNTER — история WannaCry</h4><p class="ep-views"><b class="num">1,8 млн</b> просмотров</p></article><article class="ep-card"><div class="yt " role="button" tabindex="0" data-id="yiKjQuYVgcY" aria-label="Включить ролик: Документальный фильм о реверс-инжиниринге"><img src="thumbs/positive_hack.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">1:11:53</span></div><div class="ep-meta"><span class="who">Positive Hack Media</span><span class="genre">пример жанра</span></div><h4>Документальный фильм о реверс-инжиниринге</h4><p class="ep-views"><b class="num">888 тыс.</b> просмотров</p></article></div>
+
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact"><b class="num" data-count="3">3</b><span>пилота, потом решение о сезоне по цифрам</span></div>
+      <div class="fact"><b class="num">5–6</b><span>медийных гостей со своей аудиторией</span></div>
+      <div class="fact"><b class="num" data-count="8000" data-pre="$" data-sp="1">$8&nbsp;000</b><span>за все три, $2 667 за выпуск</span></div>
+      <div class="fact g"><b>0 ₽</b><span>в смете за монтаж и упаковку: их делает команда Хедлайнеров</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why"><div class="wrap">
+  <p class="kick"><i></i>Почему не крипто-канал</p>
+  <h2 data-split>Крипту смотрят тысячи. Деньги — миллионы.</h2>
+  <p class="lead">Новости крипты смотрит узкий круг, и когда падает биткоин, такой канал падает вместе с ним. А вопрос «что будет с моими деньгами» волнует всех и всегда.</p>
+
+  <div class="duel">
+    <div class="side">
+      <div class="yt" role="button" tabindex="0" data-id="Q6e5Rr2jlrw" aria-label="Включить свежий выпуск Cointelegraph RU"><img src="assets/ct-screen-c.jpg" alt="Канал Cointelegraph RU: свежие ролики" loading="lazy" width="1280" height="759"><span class="hint">Включить свежий выпуск</span><span class="play"></span></div>
+      <div class="body">
+        <span class="tag bad">Так не надо</span>
+        <h3>Новости крипты</h3>
+        <p>Ведущая в кадре, новость дня, кликбейтная обложка. Дёшево — но и смотрят столько же. У канала 6 730 подписчиков.</p>
+        <div class="big num">6–10 тыс.<small>просмотров на ролик · Cointelegraph RU</small></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="yt" role="button" tabindex="0" data-id="Zp4xZe_F-No" aria-label="Включить выпуск Forbes Talk"><img src="assets/forbes-screen-c.jpg" alt="Канал Forbes Russia: НеФорбсы и Forbes Talk" loading="lazy" width="1280" height="782"><span class="hint">Включить лучший выпуск года</span><span class="play"></span></div>
+      <div class="body">
+        <span class="tag good">Так надо</span>
+        <h3>Деньги, кризис, люди</h3>
+        <p>Сильный гость, острая тема, дорогая картинка. Это формат Forbes — такой мы и предлагаем сделать для CoinW.</p>
+        <div class="big num">до 550 тыс.<small>просмотров на выпуск · Forbes Talk за год</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart">
+    <h3>Сколько смотрят один выпуск</h3>
+    <p class="sub">Лучшие выпуски бренд-шоу и обычный ролик крипто-новостей (медиана 15 свежих). Шкала общая.</p>
+    <div class="bars "><div class="bar" data-tip="Глеб Соломин|Лудомания — чума XXI века · 2 904 634 просмотров"><div class="lab">Глеб Соломин</div><div class="track"><div class="fill" style="width:100.00%;"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">2,9 млн</span></div></div><div class="bar" data-tip="Глеб Соломин|«Кризис коснётся каждого?» · 2 327 418 просмотров"><div class="lab">Глеб Соломин</div><div class="track"><div class="fill" style="width:80.13%;"></div><span class="val num" style="right:19.87%;left:auto;padding:0 12px 0 0;color:#0b0b0e">2,3 млн</span></div></div><div class="bar" data-tip="Tomorrow Unlocked|hacker:HUNTER — история WannaCry · 1 754 883 просмотров"><div class="lab">Tomorrow Unlocked<small>пример жанра</small></div><div class="track"><div class="fill" style="width:60.42%;"></div><span class="val num" style="left:60.42%">1,8 млн</span></div></div><div class="bar" data-tip="Positive Hack Media|Документальный фильм о реверс-инжиниринге · 888 236 просмотров"><div class="lab">Positive Hack Media<small>пример жанра</small></div><div class="track"><div class="fill" style="width:30.58%;"></div><span class="val num" style="left:30.58%">888 тыс.</span></div></div><div class="bar" data-tip="Т‑Банк|«Мы на дне уже?» Что ждёт Россию · 827 755 просмотров"><div class="lab">Т‑Банк<small>Private Talks</small></div><div class="track"><div class="fill" style="width:28.50%;"></div><span class="val num" style="left:28.50%">828 тыс.</span></div></div><div class="bar" data-tip="Т‑Банк|Скорее всего, вы не разбогатеете · 783 872 просмотров"><div class="lab">Т‑Банк<small>Т—Ж</small></div><div class="track"><div class="fill" style="width:26.99%;"></div><span class="val num" style="left:26.99%">784 тыс.</span></div></div><div class="bar" data-tip="Forbes|Олег Вьюгин о том, что ждёт экономику · 546 772 просмотров"><div class="lab">Forbes</div><div class="track"><div class="fill" style="width:18.82%;"></div><span class="val num" style="left:18.82%">547 тыс.</span></div></div><div class="bar" data-tip="Т‑Банк|От каких машин держаться подальше · 474 717 просмотров"><div class="lab">Т‑Банк<small>Деньги не спят</small></div><div class="track"><div class="fill" style="width:16.34%;"></div><span class="val num" style="left:16.34%">475 тыс.</span></div></div><div class="bar bad" data-tip="Cointelegraph RU|медиана последних 15 роликов · 10 135 просмотров"><div class="lab">Cointelegraph RU<small>крипто-новости, медиана 15 свежих</small></div><div class="track"><div class="fill" style="width:0.40%;"></div><span class="val num" style="left:0.40%">10 тыс.</span></div></div></div>
+    <div class="legend"><span><i style="background:var(--c1)"></i>кино и шоу о деньгах</span><span><i style="background:var(--c2)"></i>новости крипты</span></div>
+    <p class="src">Цифры YouTube сняты 13.10.2026.</p>
+  </div>
+</div></section>
+
+<!-- REFS -->
+<section class="sec" id="refs"><div class="wrap">
+  <p class="kick"><i></i>Как делают другие</p>
+  <h2 data-split>Бренды уже делают своё медиа — и его смотрят</h2>
+  <p class="lead">Отдельное шоу со своим лицом собирает в сотни раз больше, чем корпоративный канал. Бренд стоит в титрах, а в кадре история, сильный гость и острая тема.</p>
+
+  <div class="pair" style="margin-top:56px">
+    <div class="chart">
+      <h3>Шоу против канала компании</h3>
+      <p class="sub">Т‑Банк: шоу Private Talks и канал Т‑Инвестиций. Медиана просмотров последних 15 роликов.</p>
+      <div class="mult"><b class="num" data-count="136" data-pre="×">×136</b><span>во столько раз больше смотрят шоу бренда, чем канал компании</span></div>
+      <div class="bars mini"><div class="bar" data-tip="Private Talks|150 тыс."><div class="lab">Private Talks<small>отдельное шоу</small></div><div class="track"><div class="fill" style="width:100.00%;"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">150 тыс.</span></div></div><div class="bar bad" data-tip="Т‑Инвестиции|1,1 тыс."><div class="lab">Т‑Инвестиции<small>канал компании</small></div><div class="track"><div class="fill" style="width:0.73%;"></div><span class="val num" style="left:0.73%">1,1 тыс.</span></div></div></div>
+      <p class="src">YouTube, 13.10.2026.</p>
+    </div>
+    <div class="chart">
+      <h3>Фильм сам находит зрителя</h3>
+      <p class="sub">Positive Hack Media (пример жанра): подписчики канала и просмотры одного фильма.</p>
+      <div class="mult"><b class="num" data-count="19" data-pre="×">×19</b><span>фильм посмотрели больше людей, чем подписано на канал</span></div>
+      <div class="bars mini"><div class="bar" data-tip="Просмотры фильма|888 тыс."><div class="lab">Просмотры фильма</div><div class="track"><div class="fill" style="width:100.00%;"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">888 тыс.</span></div></div><div class="bar" data-tip="Подписчики канала|47,5 тыс."><div class="lab">Подписчики канала</div><div class="track"><div class="fill" style="width:5.35%;background:var(--mu3)"></div><span class="val num" style="left:5.35%">47,5 тыс.</span></div></div></div>
+      <p class="src">YouTube, 13.10.2026.</p>
+    </div>
+  </div>
+
+  <div class="bms"><article class="bm tg">
+  <a class="bm-shot" href="https://t.me/aviasales" target="_blank" rel="noopener noreferrer"><img src="assets/aviasales-tg.jpg" alt="Канал Авиасейлс в Telegram" loading="lazy" width="800" height="1520"></a>
+  <div class="bm-body">
+    <p class="who">Авиасейлс · Telegram</p>
+    <h3>Медиа бренда, которое читают ради него самого</h3>
+    <p>Юмор, мемы и жизнь путешественника. Билеты почти не продают, а канал работает как отдельное медиа.</p>
+    <div class="bm-stats"><div><b class="num">299 тыс.</b><span>подписчиков</span></div><div><b class="num">7–19 тыс.</b><span>просмотров у свежих постов</span></div></div>
+    <p class="src">Проверено на t.me/aviasales 13.10.2026.</p>
+  </div></article><article class="bm hd">
+  <div class="yt " role="button" tabindex="0" data-id="18UNEZr2odw" aria-label="Включить ролик: Что нельзя делать при выводе крипты"><img src="thumbs/hedliners.jpg" alt="" loading="lazy" decoding="async" width="960" height="540"><span class="play" aria-hidden="true"></span><span class="dur">12:21</span></div>
+  <div class="bm-body">
+    <p class="who">Хедлайнеры · 333 тыс. подписчиков</p>
+    <h3>Монтаж и упаковку делает команда с миллионами просмотров</h3>
+    <p>Монтаж, цвет, моушен и упаковку выпусков берёт эта команда. В смете эти работы стоят 0 ₽.</p>
+    <div class="bm-stats"><div><b class="num">405 тыс.</b><span>просмотров у этого ролика</span></div></div>
+  </div></article></div>
+
+  <div class="rules">
+    <div><h4>Бренд — в титрах</h4><span>На обложках Private Talks нет логотипа банка: там только гость и тема.</span></div>
+    <div><h4>Гость приводит зрителя</h4><span>У медийного эксперта своя аудитория, и он сам выкладывает выпуск у себя.</span></div>
+    <div><h4>Тема — тревога зрителя</h4><span>Кризис, работа, деньги. Не продукт и не курс биткоина.</span></div>
+  </div>
+</div></section>
+
+<!-- FORMAT -->
+<section class="sec" id="format"><div class="wrap">
+  <p class="kick"><i></i>Формат пилота</p>
+  <h2 data-split>Три выпуска. В&nbsp;каждом острая тема и&nbsp;сильные гости</h2>
+  <div class="formula" id="formula">
+    <span>Ударная тема</span><i>+</i><span>Медийные эксперты</span><i>+</i><span>Журналистская работа</span><i>+</i><span>Дорогая картинка</span><i>+</i><span>Упаковка</span><i>+</i><span>Посев — по желанию</span>
+  </div>
+  <p class="quote serif">Сильная тема, сильный гость, журналистская работа и упаковка&nbsp;— из этого складывается выпуск, который смотрят.</p>
+
+  <div class="eps">
+    <div class="ep"><div class="big" data-par="14">1</div><div class="n">Выпуск 1</div><h4>Рынок вот-вот рухнет — или это байка?</h4><ul><li>экономист</li><li>эксперт по рынкам<span>из-за рубежа</span></li></ul></div>
+    <div class="ep"><div class="big" data-par="14">2</div><div class="n">Выпуск 2</div><h4>Лёгкие деньги в интернете: почему большинство теряет — и что делают остальные?</h4><ul><li>психолог</li><li>блогер-практик</li></ul></div>
+    <div class="ep"><div class="big" data-par="14">3</div><div class="n">Выпуск 3</div><h4>Мы уже в кризисе — или всё ещё впереди?</h4><ul><li>экономист</li><li>предприниматель</li></ul></div>
+  </div>
+  <p class="note">Темы и гости — черновик, финальный список согласуем с CoinW до съёмок. Всего 5–6 гостей на три выпуска: из России и из-за рубежа, зарубежных переводим профессиональным дубляжом.</p>
+</div></section>
+
+<!-- BUDGET -->
+<section class="sec" id="budget"><div class="wrap">
+  <p class="kick"><i></i>Смета</p>
+  <h2 data-split>Куда уходят <span class="hl">$8&nbsp;000</span></h2>
+  <p class="lead">61% суммы уходит на съёмки: студия ведущего и гости в России и за рубежом. Монтаж, цвет, графику, нарезки и упаковку делает команда Хедлайнеров — в смете это 0 ₽.</p>
+
+  <div class="total">
+    <b class="num" data-count="8000" data-pre="$" data-sp="1">$8&nbsp;000</b>
+    <span>за три выпуска · $2 667 за выпуск<br>смета 620 000 ₽ + резерв · курс ЦБ на 13.10.2026: 83,92 ₽ за $1</span>
+  </div>
+  <div class="stack" id="stack"><div class="seg" style="flex:260000;background:var(--c1)" data-tip="Съёмки ведущего|260 000 ₽ · $3 098 · 39%"></div><div class="seg" style="flex:150000;background:var(--c3)" data-tip="Съёмки гостей|150 000 ₽ · $1 788 · 22%"></div><div class="seg" style="flex:210000;background:var(--c2)" data-tip="Продюсер и дубляж|210 000 ₽ · $2 503 · 31%"></div><div class="seg" style="flex:51322;background:var(--c4)" data-tip="Резерв|51 322 ₽ · $612 · 8%"></div></div>
+  <div class="seglab"><span><i style="background:var(--c1)"></i>Съёмки ведущего · 39%</span><span><i style="background:var(--c3)"></i>Съёмки гостей · 22%</span><span><i style="background:var(--c2)"></i>Продюсер и дубляж · 31%</span><span><i style="background:var(--c4)"></i>Резерв · 8%</span><span><i class="zero"></i>Монтаж и упаковка · 0 ₽</span></div>
+
+  <div class="ledger" id="ledger"><div class="li head"><span></span><span>Статья</span><span class="r mu">₽</span><span class="r">$</span></div><div class="li grp"><span></span><span>Съёмки</span><span class="r mu num">410 000</span><span class="r num">$4 886</span></div><div class="li "><i style="background:var(--c1)"></i><div><b>Съёмки ведущего</b><small>Студия на 2 дня и ещё день досъёмки. Ведущий снимается сразу на все три выпуска.</small></div><span class="r mu num">260 000</span><span class="r num" data-rub="260 000 ₽">$3 098</span></div><div class="li "><i style="background:var(--c3)"></i><div><b>Иностранный спикер</b><small>Один съёмочный день за рубежом: студия, оператор, свет и звук.</small></div><span class="r mu num">100 000</span><span class="r num" data-rub="100 000 ₽">$1 192</span></div><div class="li "><i style="background:var(--c3)"></i><div><b>Спикеры в России</b><small>Организация выездных съёмок 2–3 гостей.</small></div><span class="r mu num">50 000</span><span class="r num" data-rub="50 000 ₽">$596</span></div><div class="li free"><i class="zero"></i><div><b>Гонорары гостям</b><small>Гости приходят за охватом: выпуск выходит и у них в соцсетях.</small></div><span class="r mu num">0</span><span class="r num">0 ₽</span></div><div class="li grp"><span></span><span>Команда</span><span class="r mu num">210 000</span><span class="r num">$2 503</span></div><div class="li "><i style="background:var(--c2)"></i><div><b>Креативный продюсер</b><small>Темы, гости, сценарий и вопросы, ведение съёмок, выпуск.</small></div><span class="r mu num">150 000</span><span class="r num" data-rub="150 000 ₽">$1 788</span></div><div class="li "><i style="background:var(--c2)"></i><div><b>Дубляж на русский</b><small>Актёр озвучивает иностранных спикеров: 2 смены по 30 000 ₽.</small></div><span class="r mu num">60 000</span><span class="r num" data-rub="60 000 ₽">$715</span></div><div class="li grp"><span></span><span>Постпродакшн и упаковка — Хедлайнеры</span><span class="r mu num">0</span><span class="r num good">0 ₽</span></div><div class="li free zero-list"><i class="zero"></i><div><b>Всё, что делает выпуск дорогим на экране</b><ul class="zl"><li>Режиссёр монтажа</li><li>Второй монтажёр и моушен-дизайн</li><li>Колорист</li><li>20 коротких нарезок для Shorts и Reels</li><li>Упаковка и SEO на YouTube</li><li>Обложки выпусков</li></ul></div><span class="r mu num">0</span><span class="r num">0 ₽</span></div><div class="li sub"><span></span><b>Смета на три выпуска</b><span class="r mu num">620 000</span><span class="r num" data-rub="620 000 ₽">$7 388</span></div><div class="li "><i style="background:var(--c4)"></i><div><b>Резерв на курс и непредвиденное</b><small>Разница между сметой в рублях и ценой в долларах, около 8%. Курс может сдвинуться до оплаты съёмок.</small></div><span class="r mu num">51 322</span><span class="r num" data-rub="51 322 ₽">$612</span></div><div class="li sum"><span></span><b>Итого за три выпуска</b><span class="r mu num">≈ 671 300</span><span class="r num" data-rub="≈ 671 300 ₽">$8 000</span></div><div class="li opt"><i class="dash"></i><div><b>Продвижение — по желанию</b><small>Платный посев выпусков. В итог не входит: решаем после первых цифр.</small></div><span class="r mu num">+200 000</span><span class="r num">+$2 383</span></div></div>
+  <p class="src" style="margin-top:14px">Доллары по строкам округлены до $1, поэтому сумма строк может отличаться от итога на $1. Итог в рублях — по курсу ЦБ на 13.10.2026.</p>
+
+  <h3 class="h3s" data-split>По выпускам</h3>
+  <p>Ведущий и студия общие на все три выпуска, поэтому сумму делим поровну.</p>
+  <div class="eptable" role="table"><div class="er hd"><span>Статья</span><span><b class="d">Выпуск 1</b><b class="m">Каждый</b></span><span>Выпуск 2</span><span>Выпуск 3</span><span>Всего</span></div><div class="er"><span>Съёмки и дубляж</span><span class="num">156 667</span><span class="num">156 667</span><span class="num">156 667</span><span class="num">470 000</span></div><div class="er"><span>Креативный продюсер</span><span class="num">50 000</span><span class="num">50 000</span><span class="num">50 000</span><span class="num">150 000</span></div><div class="er"><span>Монтаж, графика, упаковка</span><span class="num good">0</span><span class="num good">0</span><span class="num good">0</span><span class="num">0</span></div><div class="er"><span>Резерв на курс и непредвиденное</span><span class="num">17 107</span><span class="num">17 107</span><span class="num">17 107</span><span class="num">51 322</span></div><div class="er tot"><span>Итого, ₽</span><span class="num">223 774</span><span class="num">223 774</span><span class="num">223 774</span><span class="num">671 322</span></div><div class="er tot usd"><span>Итого, $</span><span class="num">$2 667</span><span class="num">$2 667</span><span class="num">$2 667</span><span class="num">$8 000</span></div></div>
+
+  <h3 class="h3s" data-split>Почему не дешевле</h3>
+  <p>620 000 ₽ — уже урезанная версия. Полная стоит 870 000 ₽.</p>
+  <div class="pair">
+    <div class="chart">
+      <h3>Это уже минимум</h3>
+      <p class="sub">Полная версия выпусков и наша смета, в рублях.</p>
+      <div class="mult"><b class="num">−250 тыс. ₽</b><span>уже убрали из полной версии</span></div>
+      <div class="bars mini"><div class="bar" data-tip="Полная версия|870 000 ₽"><div class="lab">Полная версия<small>2 дня за рубежом и гонорары звёздам</small></div><div class="track"><div class="fill" style="width:100.00%;background:var(--mu3)"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">870 000 ₽</span></div></div><div class="bar" data-tip="Наша смета|620 000 ₽"><div class="lab">Наша смета<small>минимум без потери картинки</small></div><div class="track"><div class="fill" style="width:71.26%;"></div><span class="val num" style="right:28.74%;left:auto;padding:0 12px 0 0;color:#0b0b0e">620 000 ₽</span></div></div></div>
+      <ul class="diff"><li>Иностранные спикеры снимаются 2 дня, а не 1: +150 000 ₽</li><li>Гонорары 1–2 звёздным гостям из-за рубежа: +100 000 ₽</li></ul>
+    </div>
+    <div class="chart">
+      <h3>Чем больше смотрят, тем дешевле зритель</h3>
+      <p class="sub">Стоимость 1000 просмотров при $2 667 за выпуск.</p>
+      <div class="bars mini"><div class="bar" data-tip="50 тыс. просмотров|$2 667 за выпуск ÷ 50 000 просмотров × 1000"><div class="lab">50 тыс. просмотров</div><div class="track"><div class="fill" style="width:100.00%;"></div><span class="val num" style="right:0.00%;left:auto;padding:0 12px 0 0;color:#0b0b0e">$53</span></div></div><div class="bar" data-tip="150 тыс. просмотров|$2 667 за выпуск ÷ 150 000 просмотров × 1000"><div class="lab">150 тыс. просмотров</div><div class="track"><div class="fill" style="width:33.33%;"></div><span class="val num" style="left:33.33%">$18</span></div></div><div class="bar" data-tip="500 тыс. просмотров|$2 667 за выпуск ÷ 500 000 просмотров × 1000"><div class="lab">500 тыс. просмотров</div><div class="track"><div class="fill" style="width:10.00%;"></div><span class="val num" style="left:10.00%">$5</span></div></div></div>
+      <p class="src">Считаем только просмотры самого выпуска на YouTube. Охват у гостей и 20 нарезок для Shorts и Reels — сверху. И выпуски набирают просмотры годами: «Лудомания» Глеба Соломина вышла в июне 2025 года, сейчас у неё 2,9 млн.</p>
+    </div>
+  </div>
+  <div class="alts">
+    <div class="alt"><b>Репортаж попроще</b><span class="p">дешевле</span><span class="m"><em>Минус</em>кто-то из дома, кто-то по звонку. Картинка ниже уровня рынка, значит меньше просмотров.</span></div>
+    <div class="alt"><b>Один выпуск на пробу</b><span class="p">—</span><span class="m"><em>Минус</em>по одному выпуску не понять, заходит ли формат, и решение о сезоне принимать не по чему.</span></div>
+    <div class="alt"><b>Как новости крипты</b><span class="p">дёшево</span><span class="m"><em>Минус</em>и смотрят 6–10 тыс. человек.</span></div>
+  </div>
+</div></section>
+
+<!-- RESULT -->
+<section class="sec" id="result"><div class="wrap">
+  <p class="kick"><i></i>К чему это ведёт</p>
+  <h2 data-split>CoinW — биржа, у&nbsp;которой есть своё медиа</h2>
+  <p class="lead">Почему OKX — партнёр McLaren в «Формуле-1», а Bitget взял амбассадором Месси? Бренду нужны имена и соцдоказательство: что за ним стоит больше, чем торговля. Своё медиа решает ту же задачу — имя и доверие — и остаётся у бренда.</p>
+
+  <div class="chain" id="chain">
+    <div class="ln"><i></i></div>
+    <div class="c"><div class="dot">1</div><b>Охват</b><span>Люди, которые раньше не слышали о CoinW, видят бренд рядом с сильными темами</span></div>
+    <div class="c"><div class="dot">2</div><b>Доверие</b><span>Биржа стоит рядом с известными экспертами, а не с рекламой «купи-продай»</span></div>
+    <div class="c"><div class="dot">3</div><b>Двери</b><span>Проще заходить на ивенты, в партнёрства и к медийным людям</span></div>
+    <div class="c"><div class="dot">4</div><b>Трейдеры</b><span>Воронки работают лучше: к бренду приходят уже тёплыми</span></div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><b>Темы и гости</b><span>Согласуем с CoinW</span></div>
+    <div class="step"><b>Съёмки</b><span>Студия ведущего и гости в двух странах</span></div>
+    <div class="step"><b>Монтаж</b><span>Монтаж и упаковка — команда Хедлайнеров</span></div>
+    <div class="step"><b>Выход</b><span>Гости выкладывают выпуск у себя. Платный посев — по желанию, вне сметы</span></div>
+    <div class="step"><b>Цифры</b><span>Отчёт и решение о сезоне</span></div>
+  </div>
+
+  <div class="measure">
+    <h3>Что меряем после пилота</h3>
+    <ul>
+      <li>Просмотры и досмотры каждого выпуска</li>
+      <li>Подписчики канала</li>
+      <li>Охват у гостей: кто и где выложил</li>
+      <li>Переходы на CoinW по ссылке и промокоду</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- HONEST -->
+<section class="sec honest" id="honest"><div class="wrap">
+  <p class="kick"><i></i>Честно</p>
+  <h2 data-split>Канал может <span class="hl red">не полететь</span></h2>
+  <p class="lead">Говорим до старта, а не после.</p>
+  <div class="hon">
+    <div><b>Это не закупка трафика на неделю</b><span>Бренд-медиа — долгая история. Первые выпуски закладывают имя, а не продажи.</span></div>
+    <div><b>Формат может не зайти</b><span>Поэтому сначала три пилота, а решение о сезоне — по цифрам после них.</span></div>
+    <div><b>Просмотры не сразу становятся трейдерами</b><span>Медиа работает как соцдоказательство и греет воронки, а не заменяет их.</span></div>
+    <div><b>Риск ограничен суммой пилота</b><span>$8&nbsp;000 за три выпуска, которые останутся у бренда и будут набирать просмотры дальше.</span></div>
+  </div>
+  <p class="aside">Партнёрка CRYPTUS — отдельная история: там считаем регистрации и сделки, здесь строим имя бренда.</p>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <p class="kick" style="justify-content:center"><i></i>Решение</p>
+  <h2 data-split>Запускаем <span class="hl">три пилота</span> за $8&nbsp;000</h2>
+  <p class="lead">Следующий шаг — согласовать темы и гостей, потом съёмки. После трёх выпусков смотрим на цифры и решаем, делаем ли сезон.</p>
+  <div class="btns"><a class="btn w" href="#top" id="ctaPlay"><span class="tri"></span>Ещё раз посмотреть тизер</a><a class="btn g" href="#budget">Открыть смету</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">CoinW Media · пилот · цифры YouTube и Telegram сняты 13.10.2026</div></footer>
+
+<script>
+document.documentElement.classList.add("js");
+(function(){
+  const $ = s => document.querySelector(s);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const small = matchMedia("(max-width:760px)").matches;
+
+  /* ---- тизер в герое ---- */
+  const hero = $("#top"), v = $("#tz"), mute = $("#mute");
+  if(small && v.dataset.posterSd) v.poster = v.dataset.posterSd;
+  const saveData = navigator.connection && navigator.connection.saveData;
+  function ensureSrc(){ if(!v.getAttribute("src")) v.src = (small || saveData) ? v.dataset.sd : v.dataset.hd; }
+  function setMute(m){ v.muted = m; mute.classList.toggle("unmuted", !m); mute.setAttribute("aria-pressed", String(!m)); mute.setAttribute("aria-label", m ? "Включить звук" : "Выключить звук"); }
+  const LOOP_A = 15.0, LOOP_B = 39.4; // фон: с кадра постера (гость у микрофона) до чёрного хвоста 39,6–41,7 с
+  function ambient(){ if(reduce || saveData) return; ensureSrc(); if(v.currentTime < LOOP_A) v.currentTime = LOOP_A; const p = v.play(); if(p) p.catch(()=>{}); }
+  v.addEventListener("loadedmetadata", ()=>{ if(!hero.classList.contains("watching") && v.currentTime < LOOP_A) v.currentTime = LOOP_A; });
+  v.addEventListener("timeupdate", ()=>{ if(!hero.classList.contains("watching") && v.currentTime > LOOP_B) v.currentTime = LOOP_A; });
+  function watch(){
+    ensureSrc(); hero.classList.add("watching"); document.body.classList.add("watching-on");
+    v.loop = false; v.controls = true; setMute(false); v.currentTime = 0;
+    const p = v.play(); if(p) p.catch(()=>{ setMute(true); v.play().catch(()=>{}); });
+    if(small){
+      try{ if(v.webkitEnterFullscreen) v.webkitEnterFullscreen(); else if(v.requestFullscreen) v.requestFullscreen().catch(()=>{}); }catch(e){}
+    }
+    window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
+  }
+  function unwatch(){
+    hero.classList.remove("watching"); document.body.classList.remove("watching-on");
+    v.controls = false; v.loop = true; setMute(true); ambient();
+  }
+  $("#playSound").addEventListener("click", watch);
+  $("#ctaPlay").addEventListener("click", e=>{ e.preventDefault(); watch(); });
+  $("#closeWatch").addEventListener("click", unwatch);
+  v.addEventListener("ended", unwatch);
+  v.addEventListener("webkitendfullscreen", ()=>{ if(small) unwatch(); });
+  document.addEventListener("fullscreenchange", ()=>{ if(small && !document.fullscreenElement && hero.classList.contains("watching")) unwatch(); });
+  mute.addEventListener("click", ()=>{ ensureSrc(); setMute(!v.muted); if(v.paused) v.play().catch(()=>{}); });
+  if(document.readyState === "complete") ambient(); else addEventListener("load", ambient);
+  new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting && !v.paused) v.pause();
+    else if(e.isIntersecting && v.paused && v.getAttribute("src") && !hero.classList.contains("watching") && !reduce) v.play().catch(()=>{});
+  }), {threshold:.15}).observe(hero);
+
+  /* ---- YouTube по клику: youtube-nocookie, без загрузки до клика ---- */
+  function openYT(b){
+    if(b.querySelector("iframe")) return;
+    const f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.id + "?autoplay=1&rel=0&playsinline=1";
+    f.title = b.getAttribute("aria-label") || "YouTube";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    b.appendChild(f); b.classList.add("on");
+    if(!v.paused && !v.muted) setMute(true);
+  }
+  document.addEventListener("click", e=>{ const b = e.target.closest(".yt"); if(b) openYT(b); });
+  document.addEventListener("keydown", e=>{ if((e.key==="Enter"||e.key===" ") && e.target.classList && e.target.classList.contains("yt")){ e.preventDefault(); openYT(e.target); } });
+
+  /* ---- полка: стрелки ---- */
+  const row = $("#shelf"), L = $("#shL"), R = $("#shR");
+  const step = () => row.clientWidth * .8;
+  const upd = () => { L.disabled = row.scrollLeft < 8; R.disabled = row.scrollLeft > row.scrollWidth - row.clientWidth - 8; };
+  L.addEventListener("click", ()=>row.scrollBy({left:-step(), behavior:"smooth"}));
+  R.addEventListener("click", ()=>row.scrollBy({left:step(), behavior:"smooth"}));
+  row.addEventListener("scroll", upd, {passive:true}); upd();
+
+  /* ---- подсказки у графиков ---- */
+  const tip = $("#tip");
+  document.addEventListener("mousemove", e=>{
+    const t = e.target.closest("[data-tip]");
+    if(!t){ tip.style.opacity = 0; return; }
+    const [a,b] = t.dataset.tip.split("|");
+    tip.innerHTML = "<b></b><span></span>"; tip.firstChild.textContent = a; tip.lastChild.textContent = b || "";
+    tip.style.left = Math.min(e.clientX + 16, innerWidth - 310) + "px";
+    tip.style.top = (e.clientY + 18) + "px";
+    tip.style.opacity = 1;
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" integrity="sha384-FKTX0CNJ8ngN1oGMBReVu7mvjTJyjFiD5etb1NKnYxc+8eFI2O0KWnksTN+oTFcu" crossorigin="anonymous" defer></script>
+<script>
+addEventListener("DOMContentLoaded", function(){
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hlAll = () => document.querySelectorAll(".hl").forEach(h=>h.classList.add("on"));
+  if(!window.gsap || !window.ScrollTrigger || reduce){ hlAll(); return; }
+  gsap.registerPlugin(ScrollTrigger);
+  const mobile = matchMedia("(max-width:760px)").matches;
+
+  if(window.Lenis && !mobile){
+    const lenis = new Lenis({duration:1.15, smoothWheel:true});
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t=>lenis.raf(t*1000));
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{
+      if(a.id === "ctaPlay") return;
+      const t = document.querySelector(a.getAttribute("href")); if(!t) return;
+      e.preventDefault(); lenis.scrollTo(t,{offset: a.getAttribute("href")==="#top" ? 0 : -60});
+    }));
+    window.scrollTo = (o)=>lenis.scrollTo(typeof o === "object" ? o.top : o);
+  }
+
+  /* шапка и прогресс */
+  ScrollTrigger.create({start:0, end:"max", onUpdate:s=>document.getElementById("nav").classList.toggle("solid", s.scroll()>80)});
+  gsap.to("#prog",{scaleX:1, ease:"none", scrollTrigger:{start:0,end:"max",scrub:.3}});
+
+  /* заголовки: слова из маски */
+  function split(el){
+    const walk = n => {
+      [...n.childNodes].forEach(c=>{
+        if(c.nodeType===3){
+          const frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(p=>{
+            if(!p) return;
+            if(/^\s+$/.test(p)){ frag.appendChild(document.createTextNode(p)); return; }
+            const w = document.createElement("span"); w.className="w";
+            const i = document.createElement("span"); i.className="wi"; i.textContent=p;
+            w.appendChild(i); frag.appendChild(w);
+          });
+          c.replaceWith(frag);
+        } else if(c.nodeType===1 && !c.classList.contains("hl") && !c.classList.contains("serif")) walk(c);
+        else if(c.nodeType===1){
+          const w = document.createElement("span"); w.className="w";
+          const i = document.createElement("span"); i.className="wi";
+          c.replaceWith(w); i.appendChild(c); w.appendChild(i);
+        }
+      });
+    };
+    walk(el);
+    return el.querySelectorAll(".wi");
+  }
+  document.querySelectorAll("[data-split]").forEach(el=>{
+    const ws = split(el);
+    const inHero = !!el.closest(".hero");
+    gsap.from(ws,{yPercent:110, duration:inHero?1.2:1.0, ease:"expo.out", stagger:.06, delay:inHero?.15:0,
+      scrollTrigger: inHero ? null : {trigger:el, start:"top 88%"},
+      onComplete:()=>el.querySelectorAll(".hl").forEach(h=>h.classList.add("on"))});
+  });
+  document.querySelectorAll(".hl").forEach(h=>{
+    if(h.closest("[data-split]")) return;
+    ScrollTrigger.create({trigger:h, start:"top 88%", onEnter:()=>h.classList.add("on")});
+  });
+
+  /* герой: первый показ — одна связная сцена */
+  gsap.from([".hero-pre",".meta",".hero .desc",".hero .btns",".hero .fine"],{y:18, opacity:0, duration:1, ease:"expo.out", stagger:.07, delay:.35});
+  gsap.from(".shelf-row .ep-card",{y:40, opacity:0, duration:1.1, ease:"expo.out", stagger:.06, delay:.6});
+  /* герой на скролле: видео уходит медленнее текста */
+  gsap.to("#heroMedia",{yPercent:12, scale:1.06, ease:"none", scrollTrigger:{trigger:".hero", start:"top top", end:"bottom top", scrub:true}});
+  gsap.to(".hero-body .wrap",{yPercent:-18, opacity:0, ease:"none", scrollTrigger:{trigger:".hero", start:"30% top", end:"80% top", scrub:true}});
+
+  /* параллакс цифр в карточках выпусков и картинок */
+  gsap.utils.toArray("[data-par]").forEach(el=>{
+    const p = +el.dataset.par || 6;
+    gsap.fromTo(el,{yPercent:-p},{yPercent:p, ease:"none", scrollTrigger:{trigger:el.parentElement, start:"top bottom", end:"bottom top", scrub:true}});
+  });
+  gsap.utils.toArray(".side .yt img, .bm-shot img").forEach(img=>{
+    gsap.fromTo(img,{yPercent:-4, scale:1.1},{yPercent:4, scale:1.1, ease:"none", scrollTrigger:{trigger:img.parentElement, start:"top bottom", end:"bottom top", scrub:true}});
+  });
+
+  /* счётчики */
+  gsap.utils.toArray("[data-count]").forEach(el=>{
+    const end = +el.dataset.count, pre = el.dataset.pre||"", sp = el.dataset.sp;
+    const o = {v:0};
+    gsap.to(o,{v:end, duration:1.6, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 90%"},
+      onUpdate:()=>{ let s = Math.round(o.v).toString(); if(sp) s = s.replace(/\B(?=(\d{3})+(?!\d))/g," "); el.textContent = pre+s; }});
+  });
+
+  /* столбики растут */
+  gsap.utils.toArray(".chart").forEach(c=>{
+    const fills = c.querySelectorAll(".fill"), vals = c.querySelectorAll(".val");
+    if(!fills.length) return;
+    const tl = gsap.timeline({scrollTrigger:{trigger:c, start:"top 80%"}});
+    tl.from(fills,{scaleX:0, duration:1.3, ease:"expo.out", stagger:.07})
+      .from(vals,{opacity:0, duration:.5, stagger:.07}, "-=1.0");
+  });
+  gsap.from("#stack .seg",{scaleX:0, duration:1.2, ease:"expo.out", stagger:.1, scrollTrigger:{trigger:"#stack", start:"top 85%"}});
+  gsap.from("#ledger > .li",{opacity:0, y:14, duration:.7, ease:"expo.out", stagger:.04, scrollTrigger:{trigger:"#ledger", start:"top 80%"}});
+
+  /* формула — по одному */
+  gsap.from("#formula > *",{y:16, opacity:0, duration:.7, ease:"expo.out", stagger:.06, scrollTrigger:{trigger:"#formula", start:"top 88%"}});
+
+  /* цепочка — линия прорисовывается */
+  gsap.to("#chain .ln i",{scaleX:1, ease:"none", scrollTrigger:{trigger:"#chain", start:"top 75%", end:"bottom 55%", scrub:true}});
+
+  addEventListener("load",()=>ScrollTrigger.refresh());
+});
+</script>
+</body>
+</html>
