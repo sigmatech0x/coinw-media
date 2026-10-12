@@ -734,7 +734,6 @@ addEventListener("DOMContentLoaded", function(){
       const t = document.querySelector(a.getAttribute("href")); if(!t) return;
       e.preventDefault(); lenis.scrollTo(t,{offset: a.getAttribute("href")==="#top" ? 0 : -60});
     }));
-    window.scrollTo = (o)=>lenis.scrollTo(typeof o === "object" ? o.top : o);
   }
 
   /* шапка и прогресс */
