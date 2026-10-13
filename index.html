@@ -305,6 +305,34 @@ i.dash{border:1.5px dashed var(--mu)}
 .measure li{padding-left:20px;position:relative}
 .measure li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--ac)}
 
+/* воронка */
+.fun{margin-top:60px;display:grid;gap:12px}
+.tier{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:stretch}
+.tier .sh{position:relative;min-height:150px;display:grid;place-items:center;text-align:center}
+.tier .sh i{position:absolute;inset:0;transform-origin:50% 50%}
+.tier:nth-child(1) .sh i{clip-path:polygon(0 0,100% 0,87% 100%,13% 100%);background:linear-gradient(180deg,#26242e,#201e27)}
+.tier:nth-child(2) .sh i{clip-path:polygon(13% 0,87% 0,74% 100%,26% 100%);background:linear-gradient(180deg,#2a2638,#2c2645)}
+.tier:nth-child(3) .sh i{clip-path:polygon(26% 0,74% 0,64% 100%,36% 100%);background:linear-gradient(180deg,#5a3fd6,var(--ac))}
+.tier .in{position:relative;padding:0 18%;line-height:1.2}
+.tier .in small{display:block;font-size:13px;color:var(--mu);margin-bottom:6px}
+.tier:nth-child(3) .in small{color:rgba(255,255,255,.75)}
+.tier .in b{display:block;font-size:clamp(22px,2.3vw,30px);letter-spacing:-.02em;font-weight:800}
+.tier .in .nw{white-space:nowrap}
+.tier .in em{display:block;font-style:normal;font-size:14px;color:var(--mu2);margin-top:6px}
+.tier .tx{padding:20px 0;border-top:1px solid var(--line2);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-content:start}
+.tier .tx h3{grid-column:1/-1;font-size:clamp(21px,2.2vw,26px);letter-spacing:-.02em}
+.tier .tx p{font-size:15px;color:var(--mu2);line-height:1.5}
+.tier .tx p span{display:block;font-size:13px;color:var(--mu);margin-bottom:4px}
+.tier .tx p:last-child{color:var(--tx)}
+.vs2{margin-top:56px;border:1px solid var(--line);border-radius:24px;background:var(--s1);padding:30px 34px 26px;display:grid;gap:20px}
+.vs2 .r{display:grid;grid-template-columns:260px minmax(0,1fr) 120px;gap:22px;align-items:center}
+.vs2 .t b{display:block;font-size:18px}
+.vs2 .t span{font-size:14px;color:var(--mu2)}
+.vs2 .b{height:34px;border-radius:0 6px 6px 0;background:rgba(255,255,255,.03);position:relative;overflow:hidden}
+.vs2 .b i{position:absolute;left:0;top:0;bottom:0;min-width:5px;border-radius:0 6px 6px 0;transform-origin:0 50%}
+.vs2 .n{font-weight:800;font-size:22px;letter-spacing:-.02em;text-align:right}
+.vs2 .fine{font-size:13px;color:var(--mu);margin-top:4px}
+
 /* честно */
 .honest{background:var(--s1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .honest h2{max-width:14ch}
@@ -375,6 +403,17 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
   .ep{min-height:0}
   .chain{grid-template-columns:1fr}
   .measure ul{grid-template-columns:1fr}
+  .fun{gap:28px}
+  .tier{grid-template-columns:minmax(0,1fr);gap:10px}
+  .tier .sh{min-height:112px}
+  .tier .in{padding:0 22%}
+  .tier:nth-child(3) .in{padding:0 30%}
+  .tier .in b{font-size:21px}
+  .tier .tx{grid-template-columns:minmax(0,1fr);gap:12px;padding-top:14px;border-top:0}
+  .vs2{padding:22px 18px}
+  .vs2 .r{grid-template-columns:minmax(0,1fr) auto;gap:8px 14px}
+  .vs2 .b{grid-column:1/-1;grid-row:2;height:26px}
+  .vs2 .n{font-size:19px}
   .er{grid-template-columns:1.5fr 1fr 1fr;padding:13px 16px;font-size:14.5px}
   .er span:nth-child(3),.er span:nth-child(4){display:none}
   .er.usd{font-size:17px}
@@ -401,6 +440,7 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
     <a href="#compare">Сравнения</a>
     <a href="#budget">Смета</a>
     <a href="#result">К чему ведёт</a>
+    <!--FUNNEL-NAV--><a href="#funnel">Воронка</a><!--/FUNNEL-NAV-->
   </nav>
   <a class="price" href="#budget">$8&nbsp;000 · 3 выпуска</a>
   <div class="prog" id="prog"></div>
@@ -611,6 +651,44 @@ footer{padding:34px 0 60px;color:var(--mu);font-size:13px;border-top:1px solid v
   </div>
 </div></section>
 
+<!-- FUNNEL -->
+<section class="sec" id="funnel"><div class="wrap">
+  <p class="kick"><i></i>Воронка</p>
+  <h2 data-split>Бьём широко: говорим с миллионами, а не с 10 тысячами трейдеров</h2>
+  <p class="lead">Крипто-медиа спорят за одних и тех же людей, которые уже торгуют на других биржах. Мы заходим через деньги, экономику и политику — туда, где аудитория в разы шире, — и уже внутри ведём её к CoinW.</p>
+
+  <div class="fun" id="fun">
+    <div class="tier">
+      <div class="sh"><i></i><div class="in"><small>Верх · план</small><b><span class="nw">30–50&nbsp;тыс.</span> <span class="nw">→ 100–200&nbsp;тыс.</span></b><em>просмотров на выпуск</em></div></div>
+      <div class="tx"><h3>Широкий вход</h3>
+        <p><span>Кто там</span>Люди, которым интересны финансы, политика, экономика. С криптой они, возможно, не связаны</p>
+        <p><span>Чем ведём</span>Выпуски о деньгах с сильными гостями — на YouTube и у гостей в соцсетях</p>
+        <p><span>Во что превращается</span>Узнают CoinW рядом с сильными темами и людьми</p></div>
+    </div>
+    <div class="tier">
+      <div class="sh"><i></i><div class="in"><small>Середина</small><b>Интеграции и&nbsp;обучение</b></div></div>
+      <div class="tx"><h3>Интерес к бирже</h3>
+        <p><span>Кто там</span>Зрители, которым зашла тема, и те, кто уже трейдит</p>
+        <p><span>Чем ведём</span>Интеграции в выпусках: «кстати, есть биржа». Отдельно — обучающие воронки для VIP</p>
+        <p><span>Во что превращается</span>Запоминают CoinW как биржу, которая делает такой контент</p></div>
+    </div>
+    <div class="tier">
+      <div class="sh"><i></i><div class="in"><small>Низ</small><b>Клиенты</b></div></div>
+      <div class="tx"><h3>Регистрации и первые сделки</h3>
+        <p><span>Кто там</span>Выделенная аудитория, готовая попробовать</p>
+        <p><span>Чем ведём</span>Только грамотными воронками: обучающие материалы и привлекательные условия</p>
+        <p><span>Во что превращается</span>При грамотных воронках: регистрации, VIP, первые депозиты и сделки</p></div>
+    </div>
+  </div>
+
+  <div class="vs2" id="vs2">
+    <div class="r"><div class="t"><b>Широкий вход</b><span>Финансы, экономика, политика</span></div><div class="b"><i style="width:100%;background:var(--c1)"></i></div><div class="n">миллионы</div></div>
+    <div class="r"><div class="t"><b>Узкий крипто-вход</b><span>Трейдеры, которые уже торгуют на других биржах</span></div><div class="b"><i style="width:1%;background:var(--mu3)"></i></div><div class="n">≈ 10 тыс.</div></div>
+    <p class="fine">План и оценка команды, не обещание. Конверсии в регистрации и депозиты здесь не ставим: они зависят от воронок и условий, их считаем после пилота.</p>
+  </div>
+</div></section>
+<!-- /FUNNEL -->
+
 <!-- HONEST -->
 <section class="sec honest" id="honest"><div class="wrap">
   <p class="kick"><i></i>Честно</p>
@@ -659,7 +737,7 @@ document.documentElement.classList.add("js");
     if(small){
       try{ if(v.webkitEnterFullscreen) v.webkitEnterFullscreen(); else if(v.requestFullscreen) v.requestFullscreen().catch(()=>{}); }catch(e){}
     }
-    window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
+    if(window.__lenis) window.__lenis.scrollTo(0,{immediate:reduce}); else window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
   }
   function unwatch(){
     hero.classList.remove("watching"); document.body.classList.remove("watching-on");
@@ -734,6 +812,7 @@ addEventListener("DOMContentLoaded", function(){
       const t = document.querySelector(a.getAttribute("href")); if(!t) return;
       e.preventDefault(); lenis.scrollTo(t,{offset: a.getAttribute("href")==="#top" ? 0 : -60});
     }));
+    window.__lenis = lenis; /* прокрутка из кода — только через lenis.scrollTo; window.scrollTo НЕ переопределять: Lenis сам двигает страницу через него */
   }
 
   /* шапка и прогресс */
@@ -817,6 +896,16 @@ addEventListener("DOMContentLoaded", function(){
 
   /* цепочка — линия прорисовывается */
   gsap.to("#chain .ln i",{scaleX:1, ease:"none", scrollTrigger:{trigger:"#chain", start:"top 75%", end:"bottom 55%", scrub:true}});
+
+  /* воронка — ярусы проявляются по очереди сверху вниз */
+  if(document.getElementById("fun")){
+  const ft = gsap.timeline({scrollTrigger:{trigger:"#fun", start:"top 72%"}});
+  gsap.utils.toArray("#fun .tier").forEach((t,i)=>{
+    ft.from(t.querySelector(".sh i"),{scaleX:.2, opacity:0, duration:.9, ease:"expo.out"}, i*.45)
+      .from(t.querySelectorAll(".in, .tx > *"),{opacity:0, y:14, duration:.7, ease:"expo.out", stagger:.05}, i*.45+.15);
+  });
+  gsap.from("#vs2 .b i",{scaleX:0, duration:1.4, ease:"expo.out", stagger:.25, scrollTrigger:{trigger:"#vs2", start:"top 80%"}});
+  }
 
   addEventListener("load",()=>ScrollTrigger.refresh());
 });
